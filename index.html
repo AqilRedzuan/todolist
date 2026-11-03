@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#f4f6fa">
-<title>My To-Do List</title>
+<title>Laptop Replacement To-Do</title>
 <style>
 :root{--bg:#f4f6fa;--card:#fff;--soft:#f8f9fc;--text:#20283a;--muted:#7b8497;--line:#e8ebf1;--accent:#5269df;--accent-soft:#edf0ff;--green:#19845d;--green-soft:#e8f7ef;--amber:#a76a12;--amber-soft:#fff4df;--red:#c44855;--shadow:0 5px 20px rgba(31,45,80,.05)}
 [data-theme=dark]{--bg:#111827;--card:#1b2638;--soft:#222f43;--text:#eef2fa;--muted:#9ba8bc;--line:#2d3a4e;--accent:#91a2ff;--accent-soft:#2a365b;--green:#68d5a5;--green-soft:#1c4036;--amber:#f0c477;--amber-soft:#47371f;--red:#ff929b;--shadow:0 5px 20px rgba(0,0,0,.15)}
@@ -13,23 +13,27 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}.app{max-width:9
 header{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:35px}
 .brand{display:flex;align-items:center;gap:11px}.logo{width:42px;height:42px;border-radius:13px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:22px;font-weight:800}
 .brand h1{font-size:18px;margin:0}.brand p{margin:2px 0 0;color:var(--muted);font-size:12px}
-.actions{display:flex;gap:8px}.btn{border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:9px;padding:9px 13px;font-weight:600;font-size:13px}.btn:hover{border-color:var(--accent);color:var(--accent)}.btn.primary{background:var(--accent);border-color:var(--accent);color:white}.btn.icon{width:38px;padding:0;font-size:17px}
+.actions{display:flex;gap:8px}.btn{border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:9px;padding:9px 13px;font-weight:600;font-size:13px}.btn:hover{border-color:var(--accent);color:var(--accent)}.btn.primary{background:var(--accent);border-color:var(--accent);color:white}.btn.icon{width:38px;padding:0;font-size:17px}.btn:disabled{opacity:.55;cursor:not-allowed}
 .intro{margin-bottom:22px}.intro h2{font-size:26px;letter-spacing:-.6px;margin:0 0 4px}.intro p{color:var(--muted);margin:0}
 .summary{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin:20px 0 25px;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:13px}.summary-item{display:flex;gap:7px;align-items:center;color:var(--muted);font-size:12px}.summary-item strong{font-size:17px;color:var(--text)}.dot{width:7px;height:7px;border-radius:50%;background:var(--amber)}.dot.green{background:var(--green)}
 .section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:13px}.section-head h3{font-size:16px;margin:0}
 .tools{display:flex;gap:8px;margin-bottom:15px;flex-wrap:wrap}.field{border:1px solid var(--line);background:var(--card);color:var(--text);padding:10px 11px;border-radius:9px;outline:none}.field:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}.search{flex:1;min-width:190px}
 .tasks{display:grid;gap:10px}.task{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:15px 16px;box-shadow:var(--shadow)}
-.task-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.task-title{display:flex;gap:10px;align-items:flex-start;min-width:0}.task-title h4{font-size:14px;margin:0;overflow-wrap:anywhere}.task-meta{font-size:11px;color:var(--muted);margin-top:3px}.task-actions{display:flex;gap:5px;flex-shrink:0}.mini{border:1px solid var(--line);background:var(--soft);color:var(--muted);border-radius:7px;padding:5px 8px;font-size:11px}.mini:hover{color:var(--accent);border-color:var(--accent)}
+.task-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.task-title{display:flex;gap:10px;align-items:flex-start;min-width:0}.task-title h4{font-size:14px;margin:0;overflow-wrap:anywhere}.task-meta{font-size:11px;color:var(--muted);margin-top:3px}.task-actions{display:flex;gap:5px;flex-shrink:0;align-items:center}.mini{border:1px solid var(--line);background:var(--soft);color:var(--muted);border-radius:7px;padding:5px 8px;font-size:11px}.mini:hover{color:var(--accent);border-color:var(--accent)}
 .status{font-size:10px;font-weight:700;padding:4px 8px;border-radius:20px;white-space:nowrap;background:var(--amber-soft);color:var(--amber)}.status.done{background:var(--green-soft);color:var(--green)}
 .checks{display:grid;gap:7px;margin-top:13px}.check{display:flex;align-items:center;gap:9px;background:var(--soft);border-radius:8px;padding:9px 10px;font-size:12px}.check input{accent-color:var(--accent);width:15px;height:15px;margin:0}.check input:checked+span{text-decoration:line-through;color:var(--muted)}
+.serial-list{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:11px}.serial-item{min-width:0;background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:8px 10px}.serial-label{display:block;color:var(--muted);font-size:10px;font-weight:700;text-transform:uppercase}.serial-value{display:block;font-size:12px;font-weight:650;overflow-wrap:anywhere;margin-top:2px}
 .note{white-space:pre-wrap;overflow-wrap:anywhere;color:var(--muted);font-size:12px;margin-top:10px;padding:9px 10px;background:var(--soft);border-radius:8px}
 .due{font-size:11px;color:var(--muted);margin-top:10px}.empty{background:var(--card);border:1px dashed var(--line);border-radius:13px;padding:40px 15px;text-align:center;color:var(--muted)}.empty strong{display:block;color:var(--text);margin-bottom:4px}
 footer{text-align:center;color:var(--muted);font-size:11px;margin-top:25px}
-dialog{width:min(500px,calc(100% - 24px));padding:0;border:1px solid var(--line);border-radius:15px;background:var(--card);color:var(--text);box-shadow:0 20px 70px #0003;max-height:90vh}dialog::backdrop{background:#11182788;backdrop-filter:blur(2px)}
-.modal-head,.modal-foot{padding:15px 19px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.modal-head h3{margin:0;font-size:16px}.modal-body{padding:18px 19px;display:grid;gap:13px;overflow:auto}.modal-foot{border-top:1px solid var(--line);border-bottom:0;justify-content:flex-end;gap:8px}
+dialog{width:min(540px,calc(100% - 24px));padding:0;border:1px solid var(--line);border-radius:15px;background:var(--card);color:var(--text);box-shadow:0 20px 70px #0003;max-height:92vh}dialog::backdrop{background:#11182788;backdrop-filter:blur(2px)}
+.modal-head,.modal-foot{padding:15px 19px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.modal-head h3{margin:0;font-size:16px}.modal-body{padding:18px 19px;display:grid;gap:13px;overflow:auto;max-height:calc(92vh - 125px)}.modal-foot{border-top:1px solid var(--line);border-bottom:0;justify-content:flex-end;gap:8px}
 .group{display:grid;gap:5px}.group label{font-size:11px;font-weight:700;color:var(--muted)}.group input,.group select,.group textarea{width:100%;border:1px solid var(--line);border-radius:8px;background:var(--soft);color:var(--text);padding:10px;outline:none}.group textarea{min-height:80px;resize:vertical}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,15px);opacity:0;transition:.2s;background:#20283a;color:#fff;padding:10px 15px;border-radius:9px;z-index:5;pointer-events:none}.toast.show{opacity:1;transform:translate(-50%,0)}
-@media(max-width:560px){.app{padding:19px 13px 40px}header{align-items:flex-start}.brand p{display:none}.actions .btn{padding:8px 10px}.intro h2{font-size:23px}.summary{gap:12px}.section-head{align-items:flex-start}.section-head .btn{white-space:nowrap}.task{padding:13px}.form-row{grid-template-columns:1fr}.task-head{gap:7px}}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.serial-input{display:flex;gap:7px}.serial-input input{min-width:0;flex:1}.scan-btn{white-space:nowrap;border:1px solid var(--line);background:var(--soft);color:var(--text);border-radius:8px;padding:8px 10px;font-size:12px;font-weight:650}.scan-btn:hover{border-color:var(--accent);color:var(--accent)}
+.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,15px);opacity:0;transition:.2s;background:#20283a;color:#fff;padding:10px 15px;border-radius:9px;z-index:20;pointer-events:none;max-width:90%;text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}
+#scannerDialog{width:min(520px,calc(100% - 24px))}#reader{width:100%;min-height:220px;background:#101827;border-radius:10px;overflow:hidden}#reader video{width:100%;border-radius:10px}#reader img{max-width:100%}.scanner-help{font-size:12px;color:var(--muted);margin:0}.scanner-target{font-size:12px;font-weight:700;color:var(--accent)}
+.scanner-actions{display:flex;gap:8px;flex-wrap:wrap}.scanner-actions button{flex:1}
+@media(max-width:560px){.app{padding:19px 13px 40px}header{align-items:flex-start}.brand p{display:none}.actions .btn{padding:8px 10px}.intro h2{font-size:23px}.summary{gap:12px}.section-head{align-items:flex-start}.section-head .btn{white-space:nowrap}.task{padding:13px}.form-row,.serial-list{grid-template-columns:1fr}.task-head{gap:7px}.task-actions{flex-wrap:wrap;justify-content:flex-end}.serial-input{flex-wrap:wrap}.serial-input input{width:100%;flex-basis:100%}.scan-btn{width:100%}}
 </style>
 </head>
 <body>
@@ -37,7 +41,7 @@ dialog{width:min(500px,calc(100% - 24px));padding:0;border:1px solid var(--line)
 <header>
   <div class="brand"><div class="logo">✓</div><div><h1>My To-Do List</h1><p>Laptop replacement tasks</p></div></div>
   <div class="actions">
-    <button class="btn icon" id="themeBtn" title="Toggle theme">☾</button>
+    <button class="btn icon" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">☾</button>
     <button class="btn" id="backupBtn">↓ Backup</button>
     <button class="btn" id="importBtn">↑ Import</button>
     <input type="file" id="fileInput" accept=".json,application/json" hidden>
@@ -54,7 +58,7 @@ dialog{width:min(500px,calc(100% - 24px));padding:0;border:1px solid var(--line)
 
 <div class="section-head"><h3>Assignments</h3><button class="btn primary" id="addBtn">＋ Add task</button></div>
 <div class="tools">
-  <input class="field search" id="search" placeholder="Search colleague or notes...">
+  <input class="field search" id="search" placeholder="Search colleague, serial number or notes...">
   <select class="field" id="entityFilter"><option value="">All entities</option><option>AIB</option><option>ABM</option><option>AHM</option><option>Others</option></select>
   <select class="field" id="viewFilter"><option value="all">All tasks</option><option value="pending">Pending</option><option value="completed">Completed</option></select>
 </div>
@@ -73,6 +77,16 @@ dialog{width:min(500px,calc(100% - 24px));padding:0;border:1px solid var(--line)
       <div class="group"><label for="dueDate">DUE DATE (OPTIONAL)</label><input type="date" id="dueDate"></div>
     </div>
     <div class="group"><label for="taskTitle">TASK TITLE</label><input id="taskTitle" value="Laptop Replacement" placeholder="e.g. Laptop Replacement"></div>
+
+    <div class="group">
+      <label for="newSerial">NEW LAPTOP SERIAL NUMBER</label>
+      <div class="serial-input"><input id="newSerial" placeholder="Enter or scan new laptop serial"><button type="button" class="scan-btn" data-scan="newSerial">▦ Scan barcode</button></div>
+    </div>
+    <div class="group">
+      <label for="oldSerial">OLD LAPTOP SERIAL NUMBER</label>
+      <div class="serial-input"><input id="oldSerial" placeholder="Enter or scan old laptop serial"><button type="button" class="scan-btn" data-scan="oldSerial">▦ Scan barcode</button></div>
+    </div>
+
     <div class="group"><label>CHECKLIST</label>
       <label style="font-weight:400;color:var(--text)"><input type="checkbox" id="replaceCheck"> Replace / hand over new laptop</label>
       <label style="font-weight:400;color:var(--text)"><input type="checkbox" id="collectCheck"> Collect old laptop</label>
@@ -82,30 +96,47 @@ dialog{width:min(500px,calc(100% - 24px));padding:0;border:1px solid var(--line)
   <div class="modal-foot"><button type="button" class="btn" id="cancelBtn">Cancel</button><button type="submit" class="btn primary">Save task</button></div>
 </form>
 </dialog>
+
+<dialog id="scannerDialog">
+  <div class="modal-head"><h3>Scan laptop barcode</h3><button type="button" class="mini" id="scannerClose">✕</button></div>
+  <div class="modal-body">
+    <div class="scanner-target" id="scannerTarget">Scanning serial number</div>
+    <div id="reader"></div>
+    <p class="scanner-help" id="scannerMessage">Allow camera access and point the camera at the laptop barcode. Keep the barcode inside the frame.</p>
+    <div class="group"><label for="manualSerial">OR ENTER SERIAL NUMBER MANUALLY</label><input id="manualSerial" autocomplete="off" placeholder="Type serial number here"></div>
+    <div class="scanner-actions"><button type="button" class="btn" id="manualUse">Use serial number</button><button type="button" class="btn" id="restartScan">Restart camera</button></div>
+  </div>
+</dialog>
 <div class="toast" id="toast"></div>
 
+<!-- Camera barcode reader library. GitHub Pages is HTTPS, which is required for camera access. -->
+<script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
 <script>
 (()=>{
  const KEY='simpleLaptopTodo_v1',THEME='simpleLaptopTodoTheme';
  const $=id=>document.getElementById(id);
- let tasks=read();
+ let tasks=read(),scanner=null,scanTarget=null,scanRunning=false;
  function read(){try{const x=JSON.parse(localStorage.getItem(KEY)||'[]');return Array.isArray(x)?x:[]}catch{return[]}}
- function persist(){localStorage.setItem(KEY,JSON.stringify(tasks));render()}
+ function persist(){try{localStorage.setItem(KEY,JSON.stringify(tasks));render()}catch{notify('Unable to save. Browser storage may be full.')}}
  function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
  function done(t){return !!t.replaced&&!!t.collected}
  function date(s){if(!s)return '';const d=new Date(s+'T00:00:00');return Number.isNaN(d.getTime())?s:d.toLocaleDateString(undefined,{day:'numeric',month:'short',year:'numeric'})}
- function notify(s){$('toast').textContent=s;$('toast').classList.add('show');clearTimeout(notify.timer);notify.timer=setTimeout(()=>$('toast').classList.remove('show'),2100)}
+ function notify(s){$('toast').textContent=s;$('toast').classList.add('show');clearTimeout(notify.timer);notify.timer=setTimeout(()=>$('toast').classList.remove('show'),2300)}
  function render(){
    const completed=tasks.filter(done).length;
    $('total').textContent=tasks.length;$('pending').textContent=tasks.length-completed;$('completed').textContent=completed;
    const q=$('search').value.trim().toLowerCase(),entity=$('entityFilter').value,view=$('viewFilter').value;
-   const rows=tasks.filter(t=>(!q||[t.name,t.entity,t.title,t.notes].join(' ').toLowerCase().includes(q))&&(!entity||t.entity===entity)&&(view==='all'||(view==='completed'?done(t):!done(t)))).sort((a,b)=>(b.updatedAt||'').localeCompare(a.updatedAt||''));
+   const rows=tasks.filter(t=>(!q||[t.name,t.entity,t.title,t.notes,t.newSerial,t.oldSerial].join(' ').toLowerCase().includes(q))&&(!entity||t.entity===entity)&&(view==='all'||(view==='completed'?done(t):!done(t)))).sort((a,b)=>(b.updatedAt||'').localeCompare(a.updatedAt||''));
    $('tasks').innerHTML=rows.length?rows.map(t=>`
     <article class="task">
       <div class="task-head">
         <div class="task-title"><div><h4>${esc(t.title||'Laptop Replacement')} – ${esc(t.name)}</h4><div class="task-meta">${esc(t.entity||'No entity')}</div></div></div>
         <div class="task-actions"><span class="status ${done(t)?'done':''}">${done(t)?'Completed':'Pending'}</span><button class="mini" data-edit="${esc(t.id)}">Edit</button><button class="mini" data-delete="${esc(t.id)}">Delete</button></div>
       </div>
+      ${(t.newSerial||t.oldSerial)?`<div class="serial-list">
+        ${t.newSerial?`<div class="serial-item"><span class="serial-label">New laptop serial</span><span class="serial-value">${esc(t.newSerial)}</span></div>`:''}
+        ${t.oldSerial?`<div class="serial-item"><span class="serial-label">Old laptop serial</span><span class="serial-value">${esc(t.oldSerial)}</span></div>`:''}
+      </div>`:''}
       <div class="checks">
         <label class="check"><input type="checkbox" data-id="${esc(t.id)}" data-key="replaced" ${t.replaced?'checked':''}><span>Replace / hand over new laptop</span></label>
         <label class="check"><input type="checkbox" data-id="${esc(t.id)}" data-key="collected" ${t.collected?'checked':''}><span>Collect old laptop</span></label>
@@ -118,16 +149,17 @@ dialog{width:min(500px,calc(100% - 24px));padding:0;border:1px solid var(--line)
    $('form').reset();$('editId').value=t?.id||'';$('dialogTitle').textContent=t?'Edit task':'Add task';
    $('colleague').value=t?.name||'';$('entity').value=t?.entity||'';$('dueDate').value=t?.dueDate||'';
    $('taskTitle').value=t?.title||'Laptop Replacement';$('notes').value=t?.notes||'';
+   $('newSerial').value=t?.newSerial||'';$('oldSerial').value=t?.oldSerial||'';
    $('replaceCheck').checked=!!t?.replaced;$('collectCheck').checked=!!t?.collected;
    $('dialog').showModal();$('colleague').focus();
  }
- function close(){$('dialog').close()}
+ function close(){if($('dialog').open)$('dialog').close()}
  $('addBtn').onclick=()=>open();$('closeBtn').onclick=close;$('cancelBtn').onclick=close;
  $('dialog').addEventListener('click',e=>{if(e.target===$('dialog'))close()});
  $('form').addEventListener('submit',e=>{
    e.preventDefault();const id=$('editId').value||((crypto.randomUUID&&crypto.randomUUID())||String(Date.now()));
    const old=tasks.find(t=>t.id===id);
-   const t={id,name:$('colleague').value.trim(),entity:$('entity').value,dueDate:$('dueDate').value,title:$('taskTitle').value.trim()||'Laptop Replacement',notes:$('notes').value.trim(),replaced:$('replaceCheck').checked,collected:$('collectCheck').checked,createdAt:old?.createdAt||new Date().toISOString(),updatedAt:new Date().toISOString()};
+   const t={id,name:$('colleague').value.trim(),entity:$('entity').value,dueDate:$('dueDate').value,title:$('taskTitle').value.trim()||'Laptop Replacement',newSerial:$('newSerial').value.trim(),oldSerial:$('oldSerial').value.trim(),notes:$('notes').value.trim(),replaced:$('replaceCheck').checked,collected:$('collectCheck').checked,createdAt:old?.createdAt||new Date().toISOString(),updatedAt:new Date().toISOString()};
    if(old)tasks=tasks.map(x=>x.id===id?t:x);else tasks.unshift(t);
    persist();close();notify(old?'Task updated':'Task added');
  });
@@ -140,20 +172,67 @@ dialog{width:min(500px,calc(100% - 24px));padding:0;border:1px solid var(--line)
    if(edit){const t=tasks.find(x=>x.id===edit.dataset.edit);if(t)open(t)}
    if(del){const t=tasks.find(x=>x.id===del.dataset.delete);if(t&&confirm(`Delete task for ${t.name}?`)){tasks=tasks.filter(x=>x.id!==t.id);persist();notify('Task deleted')}}
  });
+ $('dialog').addEventListener('click',e=>{
+   const scan=e.target.closest('[data-scan]');
+   if(scan)startScanner(scan.dataset.scan);
+ });
  ['search','entityFilter','viewFilter'].forEach(id=>$(id).addEventListener(id==='search'?'input':'change',render));
  $('backupBtn').onclick=()=>{
-   const blob=new Blob([JSON.stringify({app:'Simple Laptop To-Do',version:1,tasks},null,2)],{type:'application/json'});
-   const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='laptop-todo-backup-'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(url);notify('Backup downloaded');
+   const blob=new Blob([JSON.stringify({app:'Simple Laptop To-Do',version:2,tasks},null,2)],{type:'application/json'});
+   const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='laptop-todo-backup-'+new Date().toISOString().slice(0,10)+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);notify('Backup downloaded');
  };
  $('importBtn').onclick=()=>$('fileInput').click();
  $('fileInput').addEventListener('change',async e=>{
    const f=e.target.files[0];if(!f)return;
    try{const data=JSON.parse(await f.text()),incoming=Array.isArray(data)?data:data.tasks;if(!Array.isArray(incoming))throw 0;
-     if(confirm(`Import ${incoming.length} tasks? This replaces the tasks currently saved in this browser.`)){tasks=incoming.map(t=>({...t,id:String(t.id||Date.now()+Math.random())}));persist();notify('Backup imported')}
+     if(confirm(`Import ${incoming.length} tasks? This replaces the tasks currently saved in this browser.`)){tasks=incoming.map(t=>({...t,newSerial:t.newSerial||'',oldSerial:t.oldSerial||'',id:String(t.id||Date.now()+Math.random())}));persist();notify('Backup imported')}
    }catch{alert('Invalid backup file. Please choose a JSON backup exported from this app.')}finally{e.target.value=''}
  });
  function theme(v){document.documentElement.dataset.theme=v;$('themeBtn').textContent=v==='dark'?'☀':'☾';localStorage.setItem(THEME,v)}
  theme(localStorage.getItem(THEME)||'light');$('themeBtn').onclick=()=>theme(document.documentElement.dataset.theme==='dark'?'light':'dark');
+
+ async function stopScanner(){
+   if(scanner&&scanRunning){try{await scanner.stop()}catch(err){}}
+   if(scanner){try{await scanner.clear()}catch(err){}}
+   scanner=null;scanRunning=false;$('reader').innerHTML='';
+ }
+ async function startScanner(target){
+   scanTarget=target;
+   $('scannerTarget').textContent=target==='newSerial'?'Scanning: New Laptop Serial Number':'Scanning: Old Laptop Serial Number';
+   $('manualSerial').value='';$('scannerMessage').textContent='Starting camera...';
+   $('scannerDialog').showModal();
+   await stopScanner();
+   if(!window.isSecureContext){$('scannerMessage').textContent='Camera access requires HTTPS. Open this app using your GitHub Pages HTTPS link, or enter the serial number manually.';return}
+   if(!window.Html5Qrcode){$('scannerMessage').textContent='Barcode scanner library could not load. Check your internet connection or enter the serial number manually.';return}
+   try{
+     scanner=new Html5Qrcode('reader');
+     const config={fps:12,qrbox:(w,h)=>({width:Math.min(300,w-30),height:Math.min(160,h-30)}),aspectRatio:1.4};
+     await scanner.start({facingMode:'environment'},config,onScanSuccess,()=>{});
+     scanRunning=true;$('scannerMessage').textContent='Camera is ready. Point it at the barcode on the laptop label.';
+   }catch(err){
+     $('scannerMessage').textContent='Could not open camera. Allow camera permission in your browser settings, then try again. You can also enter the serial number manually.';
+   }
+ }
+ async function onScanSuccess(decodedText){
+   const value=String(decodedText||'').trim();
+   if(!value)return;
+   const target=scanTarget;
+   await stopScanner();
+   if(target&&$(target))$(target).value=value;
+   if($('scannerDialog').open)$('scannerDialog').close();
+   notify('Barcode scanned. Check the serial number before saving.');
+ }
+ async function closeScanner(){await stopScanner();if($('scannerDialog').open)$('scannerDialog').close()}
+ $('scannerClose').onclick=closeScanner;
+ $('scannerDialog').addEventListener('click',e=>{if(e.target===$('scannerDialog'))closeScanner()});
+ $('manualUse').onclick=async()=>{
+   const value=$('manualSerial').value.trim();
+   if(!value){notify('Enter a serial number first');return}
+   if(scanTarget&&$(scanTarget))$(scanTarget).value=value;
+   await closeScanner();notify('Serial number added. Save the task to keep it.');
+ };
+ $('restartScan').onclick=()=>{if(scanTarget)startScanner(scanTarget)};
+ window.addEventListener('beforeunload',()=>{if(scanner&&scanRunning)scanner.stop().catch(()=>{})});
  render();
 })();
 </script>
